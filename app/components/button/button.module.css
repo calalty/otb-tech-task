@@ -1,0 +1,19 @@
+.button {
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  background-color: var(--yellow);
+  color: var(--dark-blue);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: var(--fw-bold);
+  border-radius: 0.25rem;
+  align-items: center;
+  margin: auto;
+  width: 100%;
+}
+
+.price {
+  font-size: 1.5rem;
+}
