@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "jest --ci"
+    "test": "jest --ci",
+    "generate:types": "curl -s https://static.onthebeach.co.uk/fe-code-test/data.json | quicktype -l ts -o app/types/data-types.ts --just-types"
   },
   "dependencies": {
     "next": "15.0.3",
