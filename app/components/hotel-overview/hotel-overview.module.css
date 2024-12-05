@@ -1,5 +1,26 @@
 .root {
   display: flex;
+  flex-direction: column;
+  max-width: 51rem;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.overview {
+  background-color: var(--white);
+  padding: 1.5rem 1rem;
+}
+
+.overview h2 {
+  font-size: 1rem;
+}
+
+.overview p {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  color: var(--dark-grey);
 }
 
 .image {
@@ -8,6 +29,7 @@
 }
 
 .image-container {
+  width: 100%;
   display: inherit;
   position: relative;
 }

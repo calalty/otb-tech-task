@@ -1,7 +1,7 @@
 .root {
   background-color: var(--white);
   padding: 1.25rem;
-  min-width: 20rem;
+  width: 70%;
 }
 
 .resort {
