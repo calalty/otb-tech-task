@@ -1,0 +1,23 @@
+.root {
+  background-color: var(--white);
+  padding: 1.25rem;
+}
+
+.resort {
+  font-size: 1.25rem;
+  font-weight: var(--fw-normal);
+  margin-bottom: 0.25rem;
+}
+
+.region {
+  color: var(--grey);
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--dark-grey);
+}

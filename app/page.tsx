@@ -1,16 +1,26 @@
-import { Button } from "./components/button/button";
-import { CountedParty } from "./components/counted-party/counted-party";
-import { StarIcon } from "./components/star-icon/star-icon";
+import { BookingInfo } from "./components/booking-info/booking-info";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.root}>
-      <Button price={{ amount: 1000, currency: "GBP" }} />
-      <StarIcon />
-      <CountedParty count={1} word="Adult" />
-      <CountedParty isIrregularPlural count={2} word="Child" />
-      <CountedParty count={2} word="Infant" />
+      <BookingInfo
+        bookingDetails={{
+          lengthOfStay: 7,
+          party: { adults: 2, children: 2, infants: 1 },
+          price: { amount: 126, currency: "GBP" },
+        }}
+        flightDetails={{
+          departureAirport: "Manchester",
+          departureDate: new Date("2030-07-03T00:00:00.000Z"),
+        }}
+        resort={{
+          countryName: "Spain",
+          regionName: "Asturias",
+          name: "El Asturias Villa",
+          starRating: 3,
+        }}
+      />
     </main>
   );
 }
