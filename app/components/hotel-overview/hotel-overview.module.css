@@ -4,5 +4,16 @@
 
 .image {
   height: auto;
-  width: auto;
+  width: 100%;
+}
+
+.image-container {
+  display: inherit;
+  position: relative;
+}
+
+.accordion {
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
