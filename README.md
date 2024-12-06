@@ -46,6 +46,18 @@ We’re not just looking for technical ability - we also want to gain an insight
 
 Some form of testing - we'd particularly like to see component testing using a tool such as Testing Library or a suitable alternative Small Git commits with clear messages Semantic HTML Modular and responsive CSS Error/warning free JavaScript Clean flow of state throughout the application We’d love to see comments in the code or the Readme explaining your thought process/where you might have struggled with this test (especially if you’re applying for a junior position)
 
+### Completed Project
+
+## Technology Used
+
+🐻 Zustand
+📅 Date-fns
+🃏 Jest
+🌐 Next
+⚛️ React 
+🛠️ TypeScript
+⌨️ Quicktype
+
 ## View Deployment
 
 🚀 https://otb-tech-task.vercel.app/ 
