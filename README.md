@@ -110,6 +110,20 @@ Some form of testing - we'd particularly like to see component testing using a t
   - **Comprehensive Documentation**: Storybook acts as living documentation, showcasing all component states.
 
 ### 🔎 SEO
+
 I’d focus on components with conditions that render using JavaScript. Instead of wrapping the component or HTML element with a condition, I’d adjust the visibility to improve SEO by keeping the content in the HTML but hiding it visually when necessary.
 
 - **The `Overview` Section**: This is likely vital information for SEO. Instead of being wrapped by a JavaScript condition, the visibility condition should be handled through styles, using `opacity` to hide the content visually while keeping it in the HTML for search engines to index.
+
+### 🗄️ Backend
+
+I’d decouple some of the logic from the frontend and move it to the backend. This includes:
+
+- **The `setSortResults` Function**:  
+  I’d remove the `results` parameter, which currently passes the data every time a different sorting option is clicked, and instead rely on the `currentSort` parameter. The backend would handle the sorting by accepting the `currentSort` parameter in a **GET request** (using query parameters, i.e., `?sort=star_rating` or `?sort=price`). The backend would then return the sorted results to the frontend.
+
+  **Why this is beneficial**:
+
+  - **Improved Performance**: Sorting large datasets on the backend reduces the amount of data that needs to be passed around and processed in the frontend. For example, for On the Beach, there would be thousands of hotels. Sorting this data on the backend ensures that only the necessary results are sent to the frontend, reducing network load and improving response times.
+  - **Centralised Logic**: By moving the sorting logic to the backend, you centralise and standardise the business logic, making it easier to manage and update. You avoid duplicating sorting functionality across multiple frontend components.
+  - **Scalability**: Offloading this task can improve overall performance, especially as the number of hotels and holiday destinations grow.
