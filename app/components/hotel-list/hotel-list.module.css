@@ -1,9 +1,16 @@
 .root {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 4rem;
   width: 100%;
+}
+
+@media screen and (min-width: 32rem) {
+  .root {
+    flex-direction: row;
+  }
 }
 
 .list {
