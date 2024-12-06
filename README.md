@@ -108,3 +108,8 @@ Some form of testing - we'd particularly like to see component testing using a t
     - This encourages **separation of concerns**, making design independent of logic or data structure.
     - Example: A generic `Button` component can be styled and tested in Storybook without being tied to a specific `HotelOverview` type. **Later, tightly coupled wrappers can be created outside of Storybook to inject type-specific data**.
   - **Comprehensive Documentation**: Storybook acts as living documentation, showcasing all component states.
+
+### SEO
+I’d focus on components with conditions that render using JavaScript. Instead of wrapping the component or HTML element with a condition, I’d adjust the visibility to improve SEO by keeping the content in the HTML but hiding it visually when necessary.
+
+- **The `Overview` Section**: This is likely vital information for SEO. Instead of being wrapped by a JavaScript condition, the visibility condition should be handled through styles, using `opacity` to hide the content visually while keeping it in the HTML for search engines to index.
