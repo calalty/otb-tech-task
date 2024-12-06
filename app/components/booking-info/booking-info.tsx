@@ -39,8 +39,8 @@ export const BookingInfo = ({
 
       {Array(starRating)
         .fill("")
-        .map(() => (
-          <StarIcon key={starRating} />
+        .map((_, i) => (
+          <StarIcon key={i} />
         ))}
 
       <div className={styles.details}>
