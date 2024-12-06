@@ -3,7 +3,6 @@ import styles from "./booking-info.module.css";
 import { StarIcon } from "../star-icon/star-icon";
 import { Button } from "../button/button";
 import { CountedParty } from "../counted-party/counted-party";
-import { useId } from "react";
 import { formatDate } from "@/app/utils/format-date/format-date";
 
 export type OmittedResort = Pick<
