@@ -20,6 +20,8 @@ Getting Started First, run the development server:
 
 npm run dev Open http://localhost:3000 with your browser to see the result.
 
+## Tech Task
+
 On the Beach Frontend Software Engineer code test Tip: Read these instructions carefully! There's important details in here to help you produce a great test. If in doubt, trust whatever is written over how the example image looks.
 
 You're expected to spend around an evening on this test, probably around 2-5 hours. Don't go overboard - when you've done enough work, stop and document in the Readme what else you would do if you had more time (though do look at the “Things we’re looking for” section below - this is a clue as to what we’re really interested in seeing - bonus points for explaining roughly how you’d achieve each point!)
@@ -43,3 +45,7 @@ Dark blue: #17317F Yellow: #FEDC07 Grey: #CCC Things we’re looking for
 We’re not just looking for technical ability - we also want to gain an insight into your thought process.
 
 Some form of testing - we'd particularly like to see component testing using a tool such as Testing Library or a suitable alternative Small Git commits with clear messages Semantic HTML Modular and responsive CSS Error/warning free JavaScript Clean flow of state throughout the application We’d love to see comments in the code or the Readme explaining your thought process/where you might have struggled with this test (especially if you’re applying for a junior position)
+
+## View Deployment
+
+🚀 https://otb-tech-task.vercel.app/ 
