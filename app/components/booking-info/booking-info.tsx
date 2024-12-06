@@ -26,39 +26,40 @@ export const BookingInfo = ({
   },
   flightDetails: { departureDate, departureAirport },
   headingId,
-}: Props) => (
-  <div className={styles.root}>
-    <h1 id={headingId} className={styles.resort}>
-      {name}
-    </h1>
-    <p className={styles.region}>
-      {regionName}, {countryName}
-    </p>
+}: Props) => {
+  const isInfantsCount = infants && infants > 0;
 
-    {Array(starRating)
-      .fill("")
-      .map((_, i) => (
-        <StarIcon key={i} />
-      ))}
+  return (
+    <div className={styles.root}>
+      <h1 id={headingId} className={styles.resort}>
+        {name}
+      </h1>
+      <p className={styles.region}>
+        {regionName}, {countryName}
+      </p>
 
-    <div className={styles.details}>
-      <p>
-        <CountedParty count={adults} word="Adult" />,{" "}
-        <CountedParty count={children} word="child" isIrregularPlural />{" "}
-        {infants && (
-          <>
-            & <CountedParty count={infants} word="infant" />
-          </>
-        )}
-      </p>
-      <p>
-        <b>{formatDate(departureDate)}</b> for <b>{lengthOfStay} days</b>
-      </p>
-      <p>
-        departing from <b>{departureAirport}</b>
-      </p>
+      {Array(starRating)
+        .fill("")
+        .map((_, i) => (
+          <StarIcon key={i} />
+        ))}
+
+      <div className={styles.details}>
+        <p>
+          <CountedParty count={adults} word="Adult" />,{" "}
+          <CountedParty count={children} word="child" isIrregularPlural />
+          {isInfantsCount && ` & `}
+          {isInfantsCount && <CountedParty count={infants} word="infant" />}
+        </p>
+        <p>
+          <b>{formatDate(departureDate)}</b> for <b>{lengthOfStay} days</b>
+        </p>
+        <p>
+          departing from <b>{departureAirport}</b>
+        </p>
+      </div>
+
+      <Button price={price} />
     </div>
-
-    <Button price={price} />
-  </div>
-);
+  );
+};
