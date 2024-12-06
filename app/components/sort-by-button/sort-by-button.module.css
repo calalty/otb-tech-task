@@ -1,0 +1,13 @@
+.root {
+  background-color: var(--white);
+  padding: 1rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  width: 12.5rem;
+  text-align: left;
+}
+
+.active {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
