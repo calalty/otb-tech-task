@@ -1,8 +1,11 @@
 import { create, StateCreator } from "zustand";
 import { DataTypes } from "../types/data-types";
-import { persist } from "zustand/middleware";
 
-type CurrentSort = "alphabetically" | "price" | "star rating" | "default";
+export type CurrentSort =
+  | "alphabetically"
+  | "price"
+  | "star rating"
+  | "default";
 
 export type InitialHotelStoreState = {
   results: DataTypes[] | null;
@@ -17,8 +20,6 @@ const initialState: InitialHotelStoreState = {
   currentSort: "default",
   results: null,
 };
-
-const SORTED_RESULTS_STATE = 'sorted-results'
 
 const hotelStore: StateCreator<UseHotelStoreState> = (set) => ({
   ...initialState,
@@ -57,12 +58,4 @@ const hotelStore: StateCreator<UseHotelStoreState> = (set) => ({
     }),
 });
 
-export const useHotelStore = create(
-  persist(hotelStore, {
-    name: SORTED_RESULTS_STATE,
-    partialize: (state) => ({
-      currentSort: state.currentSort,
-      results: state.results,
-    }),
-  })
-);
+export const useHotelStore = create(hotelStore);
