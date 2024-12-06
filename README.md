@@ -62,7 +62,7 @@ Some form of testing - we'd particularly like to see component testing using a t
 
 🚀 https://otb-tech-task.vercel.app/
 
-## What I'd Improve
+## What I'd Improve?
 
 ### Tests
 
@@ -83,3 +83,28 @@ Some form of testing - we'd particularly like to see component testing using a t
   - Ensure no changes are deployed without being thoroughly tested.
 
   This approach would significantly reduce the likelihood of bugs making it to production.
+
+### Design
+
+- 🍥 **Responsiveness**:  
+  I’d aim to make every component more responsive. Especially:
+
+  - The `HotelOverview` component:
+    - Make it use a flex column layout on smaller devices, ensuring the image appears on top rather than squished to the side.
+    - Add appropriate padding and margins for smaller devices.
+  - Font sizes:
+    - Implement dynamic font scaling for different screen sizes.
+    - Consider using **SASS** for maintaining consistent styles across breakpoints.
+
+- 🎨 **Consistent Theme**:
+  I attempted this in the **global.css** file, but it could be improved:
+
+  - Introduce a global theming system (e.g. **CSS Variables**) to ensure consistency in colors, spacing, padding, and typography across all components.
+
+- 📚 **Storybook**:  
+  I’d introduce **Storybook**, which provides a dedicated environment for creating, previewing, and documenting components.
+
+  - **Reusable Components**: Instead of components tightly coupled to their data types, I'd first design components with **generic props** in Storybook to increase reusability across the app.
+    - This encourages **separation of concerns**, making design independent of logic or data structure.
+    - Example: A generic `Button` component can be styled and tested in Storybook without being tied to a specific `HotelOverview` type. **Later, tightly coupled wrappers can be created outside of Storybook to inject type-specific data**.
+  - **Comprehensive Documentation**: Storybook acts as living documentation, showcasing all component states.
