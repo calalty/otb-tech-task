@@ -7,20 +7,14 @@ type Props = {
   results: DataTypes[];
 };
 
-export const SortByButtons = ({ results }: Props) => {
-  const sortByValues: CurrentSort[] = [
-    "alphabetically",
-    "price",
-    "star rating",
-  ];
+const sortByValues: CurrentSort[] = ["alphabetically", "price", "star rating"];
 
-  return (
-    <ul className={styles.root}>
-      {sortByValues.map((value) => (
-        <li key={value}>
-          <SortByButton results={results} value={value} />
-        </li>
-      ))}
-    </ul>
-  );
-};
+export const SortByButtons = ({ results }: Props) => (
+  <ul className={styles.root}>
+    {sortByValues.map((value) => (
+      <li key={value}>
+        <SortByButton results={results} value={value} />
+      </li>
+    ))}
+  </ul>
+);

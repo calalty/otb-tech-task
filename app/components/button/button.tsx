@@ -6,11 +6,9 @@ export type Props = {
   price: Price;
 };
 
-export const Button = ({ price: { amount, currency } }: Props) => {
-  return (
-    <button className={styles.button}>
-      <span className={styles.name}>Book now</span>
-      <span className={styles.price}>{formatPrice(amount, currency)}</span>
-    </button>
-  );
-};
+export const Button = ({ price: { amount, currency } }: Props) => (
+  <button className={styles.button}>
+    <span className={styles.name}>Book now</span>
+    <span className={styles.price}>{formatPrice(amount, currency)}</span>
+  </button>
+);

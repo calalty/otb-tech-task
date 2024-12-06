@@ -15,6 +15,7 @@ export type Props = {
   resort: OmittedResort;
   flightDetails: FlightDetails;
   bookingDetails: BookingDetails;
+  headingId: string;
 };
 
 export const BookingInfo = ({
@@ -25,43 +26,40 @@ export const BookingInfo = ({
     price,
   },
   flightDetails: { departureDate, departureAirport },
-}: Props) => {
-  const headingId = useId();
+  headingId,
+}: Props) => (
+  <div className={styles.root}>
+    <h1 id={headingId} className={styles.resort}>
+      {name}
+    </h1>
+    <p className={styles.region}>
+      {regionName}, {countryName}
+    </p>
 
-  return (
-    <article aria-labelledby={headingId} className={styles.root}>
-      <h1 id={headingId} className={styles.resort}>
-        {name}
-      </h1>
-      <p className={styles.region}>
-        {regionName}, {countryName}
+    {Array(starRating)
+      .fill("")
+      .map((_, i) => (
+        <StarIcon key={i} />
+      ))}
+
+    <div className={styles.details}>
+      <p>
+        <CountedParty count={adults} word="Adult" />,{" "}
+        <CountedParty count={children} word="child" isIrregularPlural />{" "}
+        {infants && (
+          <>
+            & <CountedParty count={infants} word="infant" />
+          </>
+        )}
       </p>
+      <p>
+        <b>{formatDate(departureDate)}</b> for <b>{lengthOfStay} days</b>
+      </p>
+      <p>
+        departing from <b>{departureAirport}</b>
+      </p>
+    </div>
 
-      {Array(starRating)
-        .fill("")
-        .map((_, i) => (
-          <StarIcon key={i} />
-        ))}
-
-      <div className={styles.details}>
-        <p>
-          <CountedParty count={adults} word="Adult" />,{" "}
-          <CountedParty count={children} word="child" isIrregularPlural />{" "}
-          {infants && (
-            <>
-              & <CountedParty count={infants} word="infant" />
-            </>
-          )}
-        </p>
-        <p>
-          <b>{formatDate(departureDate)}</b> for <b>{lengthOfStay} days</b>
-        </p>
-        <p>
-          departing from <b>{departureAirport}</b>
-        </p>
-      </div>
-
-      <Button price={{ ...price }} />
-    </article>
-  );
-};
+    <Button price={price} />
+  </div>
+);
