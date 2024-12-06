@@ -2,21 +2,27 @@
 
 import Image from "next/image";
 import { BookingInfo } from "../booking-info/booking-info";
-import { Resort } from "@/app/types/data-types";
+import { DataTypes, Resort } from "@/app/types/data-types";
 import styles from "./hotel-overview.module.css";
 import { ReadMoreLess } from "../read-more-less/read-more-less";
 import { useState } from "react";
+import { useHotelStore } from "@/app/store/use-hotel-store";
 
 export type Image = Resort["image"];
 export type Overview = Resort["overview"];
 
 type Props = {
-  image: Image;
-  overview: Overview;
+  result: DataTypes;
 };
 
-export const HotelOverview = ({ image, overview }: Props) => {
+export const HotelOverview = ({ result }: Props) => {
   const [isExpanded, setIsExpanded] = useState<boolean>(false);
+
+  const {
+    bookingDetails: { lengthOfStay, party, price },
+    flightDetails: { departureAirport, departureDate },
+    resort: { image, countryName, name, overview, regionName, starRating },
+  } = result;
 
   return (
     <article className={styles.root}>
@@ -38,20 +44,15 @@ export const HotelOverview = ({ image, overview }: Props) => {
         </div>
         <BookingInfo
           bookingDetails={{
-            lengthOfStay: 7,
-            party: { adults: 2, children: 2, infants: 1 },
-            price: { amount: 126, currency: "GBP" },
+            lengthOfStay,
+            party,
+            price,
           }}
           flightDetails={{
-            departureAirport: "Manchester",
-            departureDate: new Date("2030-07-03T00:00:00.000Z"),
+            departureAirport,
+            departureDate: new Date(departureDate),
           }}
-          resort={{
-            countryName: "Spain",
-            regionName: "Asturias",
-            name: "El Asturias Villa",
-            starRating: 3,
-          }}
+          resort={{ countryName, name, regionName, starRating }}
         />
       </div>
       {isExpanded && (
