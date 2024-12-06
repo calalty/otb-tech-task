@@ -46,7 +46,7 @@ We’re not just looking for technical ability - we also want to gain an insight
 
 Some form of testing - we'd particularly like to see component testing using a tool such as Testing Library or a suitable alternative Small Git commits with clear messages Semantic HTML Modular and responsive CSS Error/warning free JavaScript Clean flow of state throughout the application We’d love to see comments in the code or the Readme explaining your thought process/where you might have struggled with this test (especially if you’re applying for a junior position)
 
-### Completed Project
+# Completed Project
 
 ## Technology Used
 
@@ -61,3 +61,25 @@ Some form of testing - we'd particularly like to see component testing using a t
 ## View Deployment
 
 🚀 https://otb-tech-task.vercel.app/
+
+## What I'd Improve
+
+### Tests
+
+- 🧪 **Unit Tests**:  
+  I’d aim to include a unit test for every utility, component, and store I created. To streamline this, I’d introduce:
+
+  - A `setup()` function with an `options` parameter:
+    - For mocking hooks, functions, etc.
+  - A `props` option:
+    - For mocking various types of props.
+
+  This approach would reduce the need to repeatedly call the `render()` method from Jest.
+
+- 🧪 **E2E/Automation Tests**:  
+  I’d introduce 🎭**Playwright** for end-to-end (E2E) and automation testing. To ensure robustness throughout the development process, I’d:
+
+  - Integrate Playwright into the CI/CD pipeline for every environment.
+  - Ensure no changes are deployed without being thoroughly tested.
+
+  This approach would significantly reduce the likelihood of bugs making it to production.
