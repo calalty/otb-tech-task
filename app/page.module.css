@@ -1,4 +1,8 @@
 .root {
   font-family: var(--font-geist-sans);
   min-height: 100svh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
