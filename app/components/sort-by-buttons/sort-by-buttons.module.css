@@ -1,0 +1,9 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background-color: var(--dark-blue);
+  height: fit-content;
+  list-style: none;
+  margin: 0;
+}
