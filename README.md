@@ -50,14 +50,14 @@ Some form of testing - we'd particularly like to see component testing using a t
 
 ## Technology Used
 
-🐻 Zustand
-📅 Date-fns
-🃏 Jest
-🌐 Next
-⚛️ React 
-🛠️ TypeScript
-⌨️ Quicktype
+- 🐻 **Zustand**: State management library for React.
+- 📅 **Date-fns**: Utility library for working with dates.
+- 🃏 **Jest**: Testing framework.
+- 🌐 **Next.js**: React framework for server-rendered applications.
+- ⚛️ **React**: JavaScript library for building user interfaces.
+- 🛠️ **TypeScript**: Typed superset of JavaScript for safer and scalable development.
+- ⌨️ **Quicktype**: Code generator for model classes and serializers.
 
 ## View Deployment
 
-🚀 https://otb-tech-task.vercel.app/ 
+🚀 https://otb-tech-task.vercel.app/
